@@ -1,0 +1,10 @@
+import random
+import string
+
+def generate_secret_key(length=50):
+    """Generate a random string of letters, digits, and symbols to be used as a Django SECRET_KEY."""
+    characters = string.ascii_letters + string.digits + string.punctuation
+    secret_key = ''.join(random.choice(characters) for i in range(length))
+    return secret_key
+
+print(generate_secret_key())
